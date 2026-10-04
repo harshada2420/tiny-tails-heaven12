@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>About | Tiny Tails Heaven</title>
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+
+            background-color: #fffaf7;
+
+            color: #351b17;
+        }
+
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* ================= HEADER ================= */
+
+        header {
+
+            width: 100%;
+
+            background-color: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 15px 6%;
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            box-shadow:
+                0 2px 12px rgba(0,0,0,0.08);
+        }
+
+
+        .logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+        }
+
+
+        .logo-icon {
+
+            font-size: 42px;
+        }
+
+
+        .logo-text h1 {
+
+            font-size: 24px;
+
+            color: #351b17;
+        }
+
+
+        .logo-text p {
+
+            color: #e95b7b;
+
+            font-size: 13px;
+
+            margin-top: 3px;
+        }
+
+
+        nav {
+
+            display: flex;
+
+            gap: 20px;
+        }
+
+
+        nav a {
+
+            color: #351b17;
+
+            font-size: 15px;
+
+            font-weight: 600;
+        }
+
+
+        nav a:hover {
+
+            color: #e95b7b;
+        }
+
+
+        nav .active {
+
+            color: #e95b7b;
+
+            border-bottom: 2px solid #e95b7b;
+
+            padding-bottom: 5px;
+        }
+
+
+        .back-btn {
+
+            border: 1.5px solid #e95b7b;
+
+            color: #e95b7b;
+
+            padding: 10px 18px;
+
+            border-radius: 8px;
+
+            font-weight: bold;
+        }
+
+
+        .back-btn:hover {
+
+            background-color: #e95b7b;
+
+            color: white;
+        }
+
+
+        /* ================= ABOUT BANNER ================= */
+
+        .about-banner {
+
+            padding: 55px 20px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    #fff0e6,
+                    #fff5f1
+                );
+        }
+
+
+        .about-banner h2 {
+
+            font-size: 48px;
+
+            margin-bottom: 12px;
+
+            color: #351b17;
+        }
+
+
+        .about-banner p {
+
+            color: #e95b7b;
+
+            font-size: 21px;
+
+            font-weight: bold;
+        }
+
+
+        /* ================= ABOUT CONTENT ================= */
+
+        .about-content {
+
+            max-width: 1150px;
+
+            margin: auto;
+
+            padding: 65px 7%;
+        }
+
+
+        .about-text {
+
+            margin-bottom: 50px;
+        }
+
+
+        .about-text h2 {
+
+            font-size: 30px;
+
+            margin-bottom: 12px;
+
+            color: #351b17;
+        }
+
+
+        .about-text h2 span {
+
+            color: #e95b7b;
+        }
+
+
+        .about-text p {
+
+            color: #625652;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+
+            margin-bottom: 25px;
+        }
+
+
+        /* ================= IMAGES ================= */
+
+        .about-images {
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 25px;
+
+            margin-top: 35px;
+        }
+
+
+        .about-image-card {
+
+            background-color: white;
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.10);
+        }
+
+
+        .about-image-card:first-child {
+
+            grid-column: span 2;
+        }
+
+
+        .about-image-card img {
+
+            width: 100%;
+
+            height: 280px;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+
+        .about-image-card:first-child img {
+
+            height: 380px;
+        }
+
+
+        .about-image-card h3 {
+
+            padding: 18px;
+
+            text-align: center;
+
+            color: #351b17;
+
+            font-size: 20px;
+        }
+
+
+        /* ================= VALUES ================= */
+
+        .values {
+
+            margin-top: 60px;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 22px;
+        }
+
+
+        .value-card {
+
+            background-color: #fff5f1;
+
+            border: 1px solid #f3d9d2;
+
+            border-radius: 18px;
+
+            padding: 30px 20px;
+
+            text-align: center;
+        }
+
+
+        .value-icon {
+
+            font-size: 45px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .value-card h3 {
+
+            font-size: 22px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .value-card p {
+
+            color: #6c615e;
+
+            line-height: 1.6;
+        }
+
+
+        /* ================= CTA ================= */
+
+        .about-cta {
+
+            margin-top: 60px;
+
+            padding: 50px 25px;
+
+            border-radius: 25px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    #fff0e6,
+                    #fff5f1
+                );
+        }
+
+
+        .about-cta h2 {
+
+            font-size: 34px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .about-cta p {
+
+            color: #625652;
+
+            font-size: 17px;
+
+            margin-bottom: 25px;
+
+            line-height: 1.7;
+        }
+
+
+        .cta-btn {
+
+            display: inline-block;
+
+            background-color: #e95b7b;
+
+            color: white;
+
+            padding: 14px 28px;
+
+            border-radius: 10px;
+
+            font-weight: bold;
+        }
+
+
+        .cta-btn:hover {
+
+            background-color: #d94568;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+
+            background-color: #351b17;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 35px 20px;
+        }
+
+
+        footer h3 {
+
+            font-size: 25px;
+
+            margin-bottom: 8px;
+        }
+
+
+        footer p {
+
+            color: #eeeeee;
+
+            margin: 6px;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 900px) {
+
+            header {
+
+                flex-wrap: wrap;
+
+                gap: 15px;
+            }
+
+
+            nav {
+
+                order: 3;
+
+                width: 100%;
+
+                justify-content: center;
+            }
+
+
+            .about-banner h2 {
+
+                font-size: 38px;
+            }
+
+
+            .values {
+
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            header {
+
+                flex-direction: column;
+            }
+
+
+            nav {
+
+                flex-wrap: wrap;
+
+                gap: 12px;
+            }
+
+
+            .about-banner h2 {
+
+                font-size: 32px;
+            }
+
+
+            .about-banner p {
+
+                font-size: 17px;
+            }
+
+
+            .about-images {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .about-image-card:first-child {
+
+                grid-column: span 1;
+            }
+
+
+            .about-image-card img,
+
+            .about-image-card:first-child img {
+
+                height: 250px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            🐾
+        </div>
+
+
+        <div class="logo-text">
+
+            <h1>
+                Tiny Tails Heaven
+            </h1>
+
+            <p>
+                Small Tails, Big Hearts ❤️
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="about.html"
+           class="active">
+            About
+        </a>
+
+        <a href="index.html#animals">
+            Animals
+        </a>
+
+        <a href="adoption.html">
+            Adopt
+        </a>
+
+        <a href="index.html#care">
+            Care
+        </a>
+
+        <a href="index.html#contact">
+            Contact
+        </a>
+
+    </nav>
+
+
+    <a href="index.html"
+       class="back-btn">
+
+        ← Back to Home
+
+    </a>
+
+</header>
+
+
+
+<!-- ================= ABOUT BANNER ================= -->
+
+<section class="about-banner">
+
+    <h2>
+        🐾 About Tiny Tails Heaven
+    </h2>
+
+    <p>
+        A place where every tiny tail gets a second chance. ❤️
+    </p>
+
+</section>
+
+
+
+<!-- ================= ABOUT CONTENT ================= -->
+
+<section class="about-content">
+
+
+    <!-- WHO WE ARE -->
+
+    <div class="about-text">
+
+        <h2>
+            ❤️ <span>Who We Are</span>
+        </h2>
+
+        <p>
+
+            Tiny Tails Heaven is an animal rescue and
+            adoption platform created to help homeless,
+            abandoned and rescued animals find safe
+            and loving forever homes.
+
+        </p>
+
+        <p>
+
+            Our goal is to connect caring people with
+            animals that need love, care and protection.
+            We believe that every animal deserves kindness,
+            safety and a second chance at a happy life.
+
+        </p>
+
+    </div>
+
+
+
+    <!-- MISSION -->
+
+    <div class="about-text">
+
+        <h2>
+            🐾 <span>Our Mission</span>
+        </h2>
+
+        <p>
+
+            Our mission is to provide rescued animals
+            with food, shelter, medical care and a safe
+            environment while helping them find loving
+            families through responsible adoption.
+
+        </p>
+
+    </div>
+
+
+
+    <!-- VISION -->
+
+    <div class="about-text">
+
+        <h2>
+            🏠 <span>Our Vision</span>
+        </h2>
+
+        <p>
+
+            We dream of a world where no animal is
+            abandoned or left without care.
+
+            We believe every animal deserves kindness,
+            safety, love and a second chance at a happy life.
+
+        </p>
+
+    </div>
+
+
+
+    <!-- ================= SHELTER IMAGES ================= -->
+
+    <h2 class="section-title">
+        🏠 Our Shelter
+    </h2>
+
+
+    <p class="section-subtitle">
+
+        A safe and caring place where rescued animals
+        receive shelter, treatment and love.
+
+    </p>
+
+
+    <div class="about-images">
+
+
+        <!-- SHELTER SPACE -->
+
+        <div class="about-image-card">
+
+            <img src="shelter.jpg"
+                 alt="Shelter Space">
+
+            <h3>
+                🐾 Shelter Space
+            </h3>
+
+        </div>
+
+
+
+        <!-- HEALTH AND RECOVERY -->
+
+        <div class="about-image-card">
+
+            <img src="health.jpg"
+                 alt="Health And Recovery Unit">
+
+            <h3>
+                🐾 Health And Recovery Unit
+            </h3>
+
+        </div>
+
+
+
+        <!-- DISTEMPER AREA -->
+
+        <div class="about-image-card">
+
+            <img src="distemper.jpg"
+                 alt="Gasto And Distemper Area">
+
+            <h3>
+                🐾 Gasto And Distemper Area
+            </h3>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= VALUES ================= -->
+
+    <div class="values">
+
+
+        <div class="value-card">
+
+            <div class="value-icon">
+                🐶
+            </div>
+
+            <h3>
+                Rescue
+            </h3>
+
+            <p>
+
+                Helping animals who are homeless,
+                abandoned or in need.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="value-card">
+
+            <div class="value-icon">
+                ❤️
+            </div>
+
+            <h3>
+                Care
+            </h3>
+
+            <p>
+
+                Providing food, shelter,
+                medical care and lots of love.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="value-card">
+
+            <div class="value-icon">
+                🏠
+            </div>
+
+            <h3>
+                Forever Homes
+            </h3>
+
+            <p>
+
+                Connecting animals with responsible
+                and loving families.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= CTA ================= -->
+
+    <div class="about-cta">
+
+        <h2>
+            Together We Can Make a Difference 🐾
+        </h2>
+
+        <p>
+
+            Every adoption, donation and act of kindness
+            helps give a rescued animal a better future.
+
+        </p>
+
+
+        <a href="adoption.html"
+           class="cta-btn">
+
+            ❤️ Adopt a Pet
+
+        </a>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <h3>
+        🐾 Tiny Tails Heaven
+    </h3>
+
+    <p>
+        Small Tails, Big Hearts ❤️
+    </p>
+
+    <p>
+        © 2026 Tiny Tails Heaven. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

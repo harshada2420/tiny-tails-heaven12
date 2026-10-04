@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tiny Tails Heaven</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #fffaf8;
+    color: #351b17;
+}
+
+/* NAVBAR */
+nav {
+    height: 70px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    font-size: 25px;
+}
+
+.logo h2 {
+    font-size: 18px;
+    margin-bottom: 2px;
+}
+
+.logo p {
+    font-size: 9px;
+    color: #d85a7b;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #351b17;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #e95b7b;
+}
+
+.adopt-btn {
+    background: #e95b7b;
+    color: white !important;
+    padding: 10px 18px;
+    border-radius: 22px;
+}
+
+/* HERO */
+.hero {
+    min-height: 390px;
+    background: linear-gradient(100deg, #fff4f6, #fce1e9);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 55px 8%;
+    gap: 50px;
+}
+
+.hero-text {
+    max-width: 520px;
+}
+
+.welcome {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.hero h3 {
+    color: #e95b7b;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 22px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.btn {
+    padding: 11px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.primary {
+    background: #e95b7b;
+    color: white;
+}
+
+.secondary {
+    border: 2px solid #e95b7b;
+    color: #e95b7b;
+    background: white;
+}
+
+/* ANIMAL EMOJI BOX */
+.animal-box {
+    width: 330px;
+    height: 225px;
+    background: #f2c6d5;
+    border-radius: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    font-size: 48px;
+}
+
+/* STATS */
+.stats {
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding: 30px 8%;
+}
+
+.stat h2 {
+    color: #d65378;
+    font-size: 24px;
+}
+
+.stat p {
+    font-size: 11px;
+    margin-top: 3px;
+}
+
+/* COMMON SECTION */
+section {
+    padding: 55px 8%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-title h2 {
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.section-title p {
+    color: #777;
+    font-size: 12px;
+}
+
+/* SERVICES */
+.services {
+    background: #fffaf8;
+}
+
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.service-card {
+    background: white;
+    padding: 25px 15px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    min-height: 145px;
+}
+
+.service-icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.service-card h3 {
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.service-card p {
+    font-size: 11px;
+    color: #777;
+    line-height: 1.5;
+}
+
+/* ANIMALS */
+.animals {
+    background: #fffaf8;
+}
+
+.animal-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.animal-card {
+    background: white;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.animal-image {
+    height: 125px;
+    background: #f7dce5;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.animal-card h3 {
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.animal-info {
+    font-size: 11px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.animal-card p {
+    font-size: 11px;
+    color: #777;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.adopt-small {
+    display: inline-block;
+    background: #e95b7b;
+    color: white;
+    text-decoration: none;
+    padding: 7px 13px;
+    border-radius: 18px;
+    font-size: 11px;
+}
+
+/* CONTACT */
+.contact {
+    background: #fffaf8;
+    text-align: center;
+}
+
+.contact-info {
+    line-height: 2;
+    font-size: 13px;
+    color: #555;
+}
+
+/* FOOTER */
+footer {
+    background: #351b17;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+footer p {
+    font-size: 11px;
+    margin: 5px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    nav {
+        padding: 12px 5%;
+        height: auto;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 10px;
+    }
+
+    .logo h2 {
+        font-size: 15px;
+    }
+
+    .logo p {
+        font-size: 7px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 45px 5%;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .animal-box {
+        width: 280px;
+        height: 190px;
+    }
+
+    .stats {
+        padding: 25px 5%;
+    }
+
+    .service-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .animal-container {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+
+    <div class="logo">
+        <div class="logo-icon">🐾</div>
+
+        <div>
+            <h2>Tiny Tails Heaven</h2>
+            <p>Small Tails, Big Hearts ❤️</p>
+        </div>
+    </div>
+
+    <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="about.html">About</a>
+        <a href="animal.html">Animals</a>
+        <a href="adoption.html" class="adopt-btn">Adopt</a>
+        <a href="care.html">Care</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+</nav>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+    <div class="hero-text">
+
+        <div class="welcome">
+            Welcome to 🐾
+        </div>
+
+        <h1>Tiny Tails Heaven</h1>
+
+        <h3>A Home of Love, Care & Hope 🐾</h3>
+
+        <p>
+            We rescue, shelter and care for animals in need and help them
+            find loving forever homes. Every tiny tail deserves a second
+            chance at happiness.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#animals" class="btn primary">
+                🐾 Meet Our Animals
+            </a>
+
+            <a href="#adopt" class="btn secondary">
+                ❤️ Adopt a Pet
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="animal-box">
+
+        <div>🐶</div>
+        <div>🐱</div>
+        <div>🐕</div>
+        <div>🐈</div>
+
+    </div>
+
+</section>
+
+
+<!-- STATISTICS -->
+<div class="stats">
+
+    <div class="stat">
+        <h2>100+</h2>
+        <p>Animals Rescued</p>
+    </div>
+
+    <div class="stat">
+        <h2>75+</h2>
+        <p>Successful Adoptions</p>
+    </div>
+
+    <div class="stat">
+        <h2>50+</h2>
+        <p>Loving Families</p>
+    </div>
+
+</div>
+
+
+<!-- HOW WE HELP -->
+<section class="services" id="about">
+
+    <div class="section-title">
+
+        <h2>How We Help ❤️</h2>
+
+        <p>
+            Together, we can give animals a safer and happier future.
+        </p>
+
+    </div>
+
+
+    <div class="service-container">
+
+        <div class="service-card">
+
+            <div class="service-icon">🚑</div>
+
+            <h3>Rescue</h3>
+
+            <p>
+                We help homeless and rescued animals get the care they need.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">🏠</div>
+
+            <h3>Shelter</h3>
+
+            <p>
+                We provide a safe and caring temporary home for animals.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">❤️</div>
+
+            <h3>Adoption</h3>
+
+            <p>
+                We connect loving families with animals looking for homes.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">🤝</div>
+
+            <h3>Volunteer</h3>
+
+            <p>
+                People can support our work through volunteering and care.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ANIMALS -->
+<section class="animals" id="animals">
+
+    <div class="section-title">
+
+        <h2>Meet Our Animals 🐾</h2>
+
+        <p>
+            These little friends are waiting for a loving family.
+        </p>
+
+    </div>
+
+
+    <div class="animal-container">
+
+
+        <!-- MILO -->
+        <div class="animal-card">
+
+            <div class="animal-image">
+                🐱
+            </div>
+
+            <h3>Milo</h3>
+
+            <div class="animal-info">
+                Cat • 1 Year
+            </div>
+
+            <p>
+                A cute and calm cat looking for a caring family.
+            </p>
+
+            <a href="#adopt" class="adopt-small">
+                Adopt Milo
+            </a>
+
+        </div>
+
+
+        <!-- LEO -->
+        <div class="animal-card">
+
+            <div class="animal-image">
+                🐶
+            </div>
+
+            <h3>Leo</h3>
+
+            <div class="animal-info">
+                Puppy • 8 Months
+            </div>
+
+            <p>
+                A friendly and playful puppy waiting for a loving home.
+            </p>
+
+            <a href="#adopt" class="adopt-small">
+                Adopt Leo
+            </a>
+
+        </div>
+
+
+        <!-- LUNA -->
+        <div class="animal-card">
+
+            <div class="animal-image">
+                🐕
+            </div>
+
+            <h3>Luna</h3>
+
+            <div class="animal-info">
+                Dog • 2 Years
+            </div>
+
+            <p>
+                A loving dog who enjoys playing and spending time with people.
+            </p>
+
+            <a href="#adopt" class="adopt-small">
+                Adopt Luna
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+    <div class="section-title">
+
+        <h2>Contact Us ❤️</h2>
+
+        <p>
+            Want to help an animal? We would love to hear from you.
+        </p>
+
+    </div>
+
+    <div class="contact-info">
+
+        📧 Email: tinytailsheaven@gmail.com<br>
+
+        📞 Phone: +91 98765 43210<br>
+
+        📍 Location: Pune, Maharashtra
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <p>
+        Tiny Tails Heaven
+    </p>
+
+    <p>
+        Small Tails, Big Hearts ❤️
+    </p>
+
+    <p>
+        © 2026 Tiny Tails Heaven. All Rights Reserved.
+    </p>
+
+</footer>
+
+</body>
+</html>

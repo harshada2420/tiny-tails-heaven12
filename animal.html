@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Tiny Tails Heaven | Our Animals</title>
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #fffaf7;
+            color: #351b17;
+        }
+
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* ================= HEADER ================= */
+
+        header {
+            width: 100%;
+            background-color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 15px 6%;
+
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+
+        .logo-icon {
+            font-size: 42px;
+        }
+
+
+        .logo-text h1 {
+            font-size: 24px;
+            color: #351b17;
+        }
+
+
+        .logo-text p {
+            color: #e95b7b;
+            font-size: 13px;
+            margin-top: 3px;
+        }
+
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+
+        nav a {
+            color: #351b17;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+
+        nav a:hover {
+            color: #e95b7b;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .animals-hero {
+
+            text-align: center;
+
+            padding: 80px 7%;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    #fff0e6,
+                    #fff9f6
+                );
+        }
+
+
+        .animals-hero h2 {
+
+            font-size: 48px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .animals-hero p {
+
+            max-width: 750px;
+
+            margin: auto;
+
+            font-size: 18px;
+
+            line-height: 1.7;
+
+            color: #625652;
+        }
+
+
+        /* ================= ANIMALS SECTION ================= */
+
+        .animals-section {
+
+            padding: 70px 7%;
+
+            background-color: white;
+
+            text-align: center;
+        }
+
+
+        .section-title {
+
+            font-size: 38px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .section-subtitle {
+
+            color: #716562;
+
+            font-size: 17px;
+
+            margin-bottom: 40px;
+        }
+
+
+        .animal-container {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 28px;
+        }
+
+
+        /* ================= ANIMAL CARD ================= */
+
+        .animal-card {
+
+            background-color: #fffafa;
+
+            border: 1px solid #f3d9d2;
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.08);
+
+            transition: 0.3s;
+        }
+
+
+        .animal-card:hover {
+
+            transform: translateY(-7px);
+
+            box-shadow:
+                0 12px 25px rgba(0,0,0,0.10);
+        }
+
+
+        .animal-photo {
+
+            height: 230px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f9d7c5,
+                    #f7bfc4
+                );
+
+            font-size: 90px;
+        }
+
+
+        .animal-info {
+
+            padding: 22px;
+
+            text-align: left;
+        }
+
+
+        .animal-info h3 {
+
+            font-size: 25px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .animal-details {
+
+            color: #e95b7b;
+
+            font-weight: bold;
+
+            margin-bottom: 10px;
+        }
+
+
+        .animal-info p {
+
+            color: #6c615e;
+
+            line-height: 1.6;
+
+            margin-bottom: 18px;
+        }
+
+
+        .adopt-button {
+
+            display: inline-block;
+
+            background-color: #e95b7b;
+
+            color: white;
+
+            padding: 10px 18px;
+
+            border-radius: 8px;
+
+            font-weight: bold;
+        }
+
+
+        .adopt-button:hover {
+
+            background-color: #d94568;
+        }
+
+
+        /* ================= INFORMATION ================= */
+
+        .animal-info-section {
+
+            padding: 70px 7%;
+
+            background-color: #fff5f1;
+
+            text-align: center;
+        }
+
+
+        .info-box {
+
+            max-width: 850px;
+
+            margin: auto;
+
+            background-color: white;
+
+            padding: 35px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.07);
+        }
+
+
+        .info-box p {
+
+            color: #625652;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+        }
+
+
+        /* ================= BUTTON ================= */
+
+        .home-button {
+
+            display: inline-block;
+
+            margin-top: 30px;
+
+            background-color: #e95b7b;
+
+            color: white;
+
+            padding: 14px 28px;
+
+            border-radius: 10px;
+
+            font-weight: bold;
+        }
+
+
+        .home-button:hover {
+
+            background-color: #d94568;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+
+            background-color: #351b17;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 35px 20px;
+        }
+
+
+        footer h3 {
+
+            font-size: 25px;
+
+            margin-bottom: 8px;
+        }
+
+
+        footer p {
+
+            color: #eeeeee;
+
+            margin: 6px;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 800px) {
+
+            header {
+
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+
+            nav {
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+
+            }
+
+
+            .animals-hero h2 {
+
+                font-size: 38px;
+            }
+
+
+            .animal-container {
+
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            🐾
+        </div>
+
+
+        <div class="logo-text">
+
+            <h1>
+                Tiny Tails Heaven
+            </h1>
+
+            <p>
+                Small Tails, Big Hearts ❤️
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="animals.html">
+            Animals
+        </a>
+
+        <a href="adoption.html">
+            Adopt
+        </a>
+
+        <a href="care.html">
+            Care
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="animals-hero">
+
+    <h2>
+        🐾 Meet Our Animals
+    </h2>
+
+
+    <p>
+
+        Meet the adorable cats and dogs at
+        Tiny Tails Heaven who are waiting for
+        love, care and a forever family.
+
+    </p>
+
+</section>
+
+
+
+<!-- ================= ANIMALS ================= -->
+
+<section class="animals-section">
+
+
+    <h2 class="section-title">
+        ❤️ Our Lovely Animals
+    </h2>
+
+
+    <p class="section-subtitle">
+
+        Every animal deserves a safe and
+        loving home.
+
+    </p>
+
+
+    <div class="animal-container">
+
+
+        <!-- ROCKY -->
+
+        <div class="animal-card">
+
+            <div class="animal-photo">
+                🐶
+            </div>
+
+
+            <div class="animal-info">
+
+                <h3>
+                    Rocky
+                </h3>
+
+
+                <p class="animal-details">
+                    Dog • 2 Years • Male
+                </p>
+
+
+                <p>
+
+                    Rocky is friendly, playful and
+                    loves spending time with people.
+
+                </p>
+
+
+                <a href="adoption.html"
+                   class="adopt-button">
+
+                    ❤️ Adopt Rocky
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- LUNA -->
+
+        <div class="animal-card">
+
+            <div class="animal-photo">
+                🐱
+            </div>
+
+
+            <div class="animal-info">
+
+                <h3>
+                    Luna
+                </h3>
+
+
+                <p class="animal-details">
+                    Cat • 1 Year • Female
+                </p>
+
+
+                <p>
+
+                    Luna is gentle, calm and enjoys
+                    a warm and comfortable home.
+
+                </p>
+
+
+                <a href="adoption.html"
+                   class="adopt-button">
+
+                    ❤️ Adopt Luna
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- MAX -->
+
+        <div class="animal-card">
+
+            <div class="animal-photo">
+                🐕
+            </div>
+
+
+            <div class="animal-info">
+
+                <h3>
+                    Max
+                </h3>
+
+
+                <p class="animal-details">
+                    Dog • 3 Years • Male
+                </p>
+
+
+                <p>
+
+                    Max is energetic, loving and
+                    enjoys playing outdoors.
+
+                </p>
+
+
+                <a href="adoption.html"
+                   class="adopt-button">
+
+                    ❤️ Adopt Max
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- MILO -->
+
+        <div class="animal-card">
+
+            <div class="animal-photo">
+                🐈
+            </div>
+
+
+            <div class="animal-info">
+
+                <h3>
+                    Milo
+                </h3>
+
+
+                <p class="animal-details">
+                    Cat • 2 Years • Male
+                </p>
+
+
+                <p>
+
+                    Milo is playful and affectionate
+                    and loves attention.
+
+                </p>
+
+
+                <a href="adoption.html"
+                   class="adopt-button">
+
+                    ❤️ Adopt Milo
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- BELLA -->
+
+        <div class="animal-card">
+
+            <div class="animal-photo">
+                🐶
+            </div>
+
+
+            <div class="animal-info">
+
+                <h3>
+                    Bella
+                </h3>
+
+
+                <p class="animal-details">
+                    Puppy • 8 Months • Female
+                </p>
+
+
+                <p>
+
+                    Bella is cheerful, friendly and
+                    looking for a caring family.
+
+                </p>
+
+
+                <a href="adoption.html"
+                   class="adopt-button">
+
+                    ❤️ Adopt Bella
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SIMBA -->
+
+        <div class="animal-card">
+
+            <div class="animal-photo">
+                🐱
+            </div>
+
+
+            <div class="animal-info">
+
+                <h3>
+                    Simba
+                </h3>
+
+
+                <p class="animal-details">
+                    Cat • 1.5 Years • Male
+                </p>
+
+
+                <p>
+
+                    Simba is sweet, curious and
+                    loves being around people.
+
+                </p>
+
+
+                <a href="adoption.html"
+                   class="adopt-button">
+
+                    ❤️ Adopt Simba
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= INFORMATION ================= -->
+
+<section class="animal-info-section">
+
+
+    <div class="info-box">
+
+        <h2 class="section-title">
+            🏠 Give Them a Forever Home
+        </h2>
+
+
+        <p>
+
+            Adopting an animal is a beautiful
+            responsibility. By adopting from
+            Tiny Tails Heaven, you can give a
+            rescued animal a safe home, proper
+            care and a loving family.
+
+        </p>
+
+
+        <a href="adoption.html"
+           class="home-button">
+
+            ❤️ Start Adoption
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <h3>
+        🐾 Tiny Tails Heaven
+    </h3>
+
+    <p>
+        Small Tails, Big Hearts ❤️
+    </p>
+
+    <p>
+        Caring for animals and helping them
+        find loving homes.
+    </p>
+
+    <p>
+        © 2026 Tiny Tails Heaven
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

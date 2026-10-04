@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Adopt a Pet | Tiny Tails Heaven</title>
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    #fff0e6,
+                    #fff9f6
+                );
+
+            color: #351b17;
+
+            min-height: 100vh;
+        }
+
+
+        /* ================= HEADER ================= */
+
+        header {
+
+            background-color: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 15px 6%;
+
+            box-shadow:
+                0 2px 12px rgba(0,0,0,0.08);
+        }
+
+
+        .logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+        }
+
+
+        .logo-icon {
+
+            font-size: 42px;
+        }
+
+
+        .logo-text h1 {
+
+            font-size: 24px;
+
+            color: #351b17;
+        }
+
+
+        .logo-text p {
+
+            color: #e95b7b;
+
+            font-size: 13px;
+
+            margin-top: 3px;
+        }
+
+
+        .back-btn {
+
+            text-decoration: none;
+
+            border: 2px solid #e95b7b;
+
+            color: #e95b7b;
+
+            padding: 11px 20px;
+
+            border-radius: 8px;
+
+            font-weight: bold;
+        }
+
+
+        .back-btn:hover {
+
+            background-color: #e95b7b;
+
+            color: white;
+        }
+
+
+        /* ================= FORM SECTION ================= */
+
+        .form-section {
+
+            padding: 60px 20px;
+        }
+
+
+        .form-box {
+
+            width: 100%;
+
+            max-width: 750px;
+
+            margin: auto;
+
+            background-color: white;
+
+            padding: 40px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 8px 30px rgba(0,0,0,0.10);
+        }
+
+
+        .form-box h2 {
+
+            text-align: center;
+
+            color: #351b17;
+
+            font-size: 36px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .form-intro {
+
+            text-align: center;
+
+            color: #625652;
+
+            font-size: 17px;
+
+            margin-bottom: 30px;
+
+            line-height: 1.6;
+        }
+
+
+        /* ================= FORM ================= */
+
+        label {
+
+            display: block;
+
+            margin-top: 18px;
+
+            margin-bottom: 7px;
+
+            font-weight: bold;
+
+            color: #351b17;
+        }
+
+
+        input,
+        select,
+        textarea {
+
+            width: 100%;
+
+            padding: 13px;
+
+            border: 1px solid #e2c8ce;
+
+            border-radius: 8px;
+
+            font-size: 15px;
+
+            outline: none;
+        }
+
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+
+            border-color: #e95b7b;
+        }
+
+
+        textarea {
+
+            height: 100px;
+
+            resize: vertical;
+        }
+
+
+        /* ================= SUBMIT ================= */
+
+        .submit-btn {
+
+            width: 100%;
+
+            margin-top: 28px;
+
+            padding: 15px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background-color: #e95b7b;
+
+            color: white;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+
+        .submit-btn:hover {
+
+            background-color: #d94568;
+        }
+
+
+        /* ================= SUCCESS MESSAGE ================= */
+
+        #successMessage {
+
+            display: none;
+
+            margin-top: 25px;
+
+            padding: 20px;
+
+            text-align: center;
+
+            background-color: #e9f7ed;
+
+            color: green;
+
+            border-radius: 10px;
+
+            font-weight: bold;
+
+            line-height: 1.6;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 600px) {
+
+            header {
+
+                flex-direction: column;
+
+                gap: 15px;
+
+                text-align: center;
+            }
+
+
+            .form-box {
+
+                padding: 25px 20px;
+            }
+
+
+            .form-box h2 {
+
+                font-size: 28px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            🐾
+        </div>
+
+        <div class="logo-text">
+
+            <h1>
+                Tiny Tails Heaven
+            </h1>
+
+            <p>
+                Small Tails, Big Hearts ❤️
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <a href="index.html"
+       class="back-btn">
+
+        ← Back to Home
+
+    </a>
+
+</header>
+
+
+
+<!-- ================= ADOPTION FORM ================= -->
+
+<section class="form-section">
+
+
+    <div class="form-box">
+
+
+        <h2>
+            ❤️ Pet Adoption Form
+        </h2>
+
+
+        <p class="form-intro">
+
+            Give a loving animal a forever home. 🐾
+
+            <br>
+
+            Please fill in the details below to start
+            your adoption journey.
+
+        </p>
+
+
+
+        <form onsubmit="submitAdoption(event)">
+
+
+            <!-- NAME -->
+
+            <label>
+                Full Name *
+            </label>
+
+            <input
+                type="text"
+                placeholder="Enter your full name"
+                required>
+
+
+
+            <!-- EMAIL -->
+
+            <label>
+                Email Address *
+            </label>
+
+            <input
+                type="email"
+                placeholder="Enter your email address"
+                required>
+
+
+
+            <!-- PHONE -->
+
+            <label>
+                Phone Number *
+            </label>
+
+            <input
+                type="tel"
+                placeholder="Enter your phone number"
+                pattern="[0-9]{10}"
+                maxlength="10"
+                required>
+
+
+
+            <!-- AGE -->
+
+            <label>
+                Age *
+            </label>
+
+            <input
+                type="number"
+                placeholder="Enter your age"
+                min="18"
+                required>
+
+
+
+            <!-- PET -->
+
+            <label>
+                Select Pet *
+            </label>
+
+            <select required>
+
+                <option value="">
+                    -- Select a Pet --
+                </option>
+
+                <option>
+                    🐶 Rocky - Dog
+                </option>
+
+                <option>
+                    🐱 Milo - Cat
+                </option>
+
+                <option>
+                    🐕 Bella - Puppy
+                </option>
+
+                <option>
+                    🐈 Luna - Cat
+                </option>
+
+            </select>
+
+
+
+            <!-- HOME TYPE -->
+
+            <label>
+                Type of Home *
+            </label>
+
+            <select required>
+
+                <option value="">
+                    -- Select Home Type --
+                </option>
+
+                <option>
+                    Apartment
+                </option>
+
+                <option>
+                    Independent House
+                </option>
+
+                <option>
+                    Hostel
+                </option>
+
+                <option>
+                    Other
+                </option>
+
+            </select>
+
+
+
+            <!-- PET EXPERIENCE -->
+
+            <label>
+                Have you owned a pet before? *
+            </label>
+
+            <select required>
+
+                <option value="">
+                    -- Select --
+                </option>
+
+                <option>
+                    Yes
+                </option>
+
+                <option>
+                    No
+                </option>
+
+            </select>
+
+
+
+            <!-- REASON -->
+
+            <label>
+                Why do you want to adopt? *
+            </label>
+
+            <textarea
+                placeholder="Tell us why you want to adopt this pet..."
+                required></textarea>
+
+
+
+            <!-- ADDITIONAL MESSAGE -->
+
+            <label>
+                Additional Message
+            </label>
+
+            <textarea
+                placeholder="Any additional information you would like to share..."></textarea>
+
+
+
+            <!-- SUBMIT -->
+
+            <button
+                type="submit"
+                class="submit-btn">
+
+                ❤️ Submit Adoption Request
+
+            </button>
+
+
+        </form>
+
+
+
+        <!-- SUCCESS -->
+
+        <div id="successMessage">
+
+            🎉 Thank You! ❤️
+
+            <br><br>
+
+            Your adoption request has been submitted
+            successfully.
+
+            <br>
+
+            Our team will contact you soon. 🐾
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<script>
+
+function submitAdoption(event) {
+
+    event.preventDefault();
+
+    document.getElementById("successMessage").style.display = "block";
+
+    window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: "smooth"
+    });
+
+}
+
+</script>
+
+
+</body>
+
+</html>
